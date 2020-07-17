@@ -1,0 +1,53 @@
+.searchColumn {
+  background-color: #eee;
+}
+
+h2, h3 {
+  padding-top: 10px;
+  font-weight: 500;
+}
+
+h4 {
+  font-weight: 500;
+}
+
+.container {
+  max-width: 1000px;
+}
+
+.bg-primary, .input-group {
+  margin-bottom: 10px;
+}
+
+.btn-group-vertical {
+  width: 100%;
+  display: inline-block;
+}
+
+.btn-light {
+  text-align: left;
+}
+
+.uvPadding {
+  padding: 10px;
+  border-radius: 0.3rem;
+}
+
+.card-body {
+  padding: 0.75rem;
+  padding-bottom: 0;
+}
+
+#currentWeather {
+  border: solid 2px rgba(0,0,0,.125);
+  border-radius: 0.4rem;
+  margin: 10px 0 15px 0;
+  padding: 10px;
+}
+
+#previousSearch {
+  margin-bottom: 10px;
+  max-height: 300px;
+  overflow: auto;
+}
+
