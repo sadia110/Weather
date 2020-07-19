@@ -1,10 +1,11 @@
-.searchColumn {
-  background-color: #eee;
+ .searchColumn {
+  background-color:lightblue;
 }
 
 h2, h3 {
   padding-top: 10px;
-  font-weight: 500;
+  font-weight: 500; 
+  background-color: rgb(201, 241, 239);
 }
 
 h4 {
@@ -12,7 +13,7 @@ h4 {
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1300px;
 }
 
 .bg-primary, .input-group {
@@ -30,7 +31,7 @@ h4 {
 
 .uvPadding {
   padding: 10px;
-  border-radius: 0.3rem;
+  border-radius: 0.5rem;
 }
 
 .card-body {
@@ -50,4 +51,16 @@ h4 {
   max-height: 300px;
   overflow: auto;
 }
+
+
+
+
+@media   (max-width: 768px) {
+  #previousSearch {
+      max-height: 152px;
+  }
+} */  
+
+
+
 
