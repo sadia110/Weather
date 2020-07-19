@@ -79,15 +79,25 @@ function returnUVIndex(coordinates) {
       let uvSeverity = "green";
       let textColour = "black"
       //Change UV background based on the level 
+      // Extreme
       if (currUVIndex >= 11) {
-          uvSeverity = "blue";
-      } else if (currUVIndex >= 8) {
           uvSeverity = "red";
-      } else if (currUVIndex >= 6) {
+      
+      // Very High
+        } else if (currUVIndex >= 10) {
           uvSeverity = "orange";
-          textColour = "black"
-      } else if (currUVIndex >= 3) {
+          textColour = "black" 
+      // High
+        } else if (currUVIndex >= 7) {
           uvSeverity = "yellow";
+          textColour = "black" 
+      // Moderate 
+      } else if (currUVIndex >= 5) {
+          uvSeverity = "purple";
+          textColour = "black" 
+      // Low
+      } else if (currUVIndex >= 2) {
+          uvSeverity = "green";
           textColour = "black"
       }
       currWeatherDiv.append(`<p>UV Index: <span class="text-${textColour} uvPadding" style="background-color: ${uvSeverity};">${currUVIndex}</span></p>`);
