@@ -68,7 +68,70 @@ function returnWeatherForecast(cityName) {
           `)
       })
   })
-};
+};  
+
+// UV INDEX *** 
+function returnUVIndex(coordinates) {
+  let queryURL = `https://api.openweathermap.org/data/2.5/uvi?lat=${coordinates.lat}&lon=${coordinates.lon}&APPID=${apiKey}`;
+
+  $.get(queryURL).then(function(response){
+      let currUVIndex = response.value;
+      let uvSeverity = "green";
+      let textColour = "black"
+      //Change UV background based on the level 
+      if (currUVIndex >= 11) {
+          uvSeverity = "blue";
+      } else if (currUVIndex >= 8) {
+          uvSeverity = "red";
+      } else if (currUVIndex >= 6) {
+          uvSeverity = "orange";
+          textColour = "black"
+      } else if (currUVIndex >= 3) {
+          uvSeverity = "yellow";
+          textColour = "black"
+      }
+      currWeatherDiv.append(`<p>UV Index: <span class="text-${textColour} uvPadding" style="background-color: ${uvSeverity};">${currUVIndex}</span></p>`);
+  })
+}
+
+function createHistoryButton(cityName) {
+  // TO CHECK IF BUTTON EXIT IN SEACH BOX 
+  var citySearch = cityName.trim();
+  var buttonCheck = $(`#previousSearch > BUTTON[value='${citySearch}']`);
+  if (buttonCheck.length == 1) {
+    return;
+  }
+  
+  if (!citiesArray.includes(cityName)){
+      citiesArray.push(cityName);
+      localStorage.setItem("localWeatherSearches", JSON.stringify(citiesArray));
+  }
+
+  $("#previousSearch").prepend(`
+  <button class="btn btn-light cityHistoryBtn" value='${cityName}'>${cityName}</button>
+  `);
+}
+
+function writeSearchHistory(array) {
+  $.each(array, function(i) {
+      createHistoryButton(array[i]);
+  })
+}
+
+
+
+$("#submitCity").click(function() {
+  event.preventDefault();
+  let cityName = $("#cityInput").val();
+  returnCurrentWeather(cityName);
+  returnWeatherForecast(cityName);
+});
+
+$("#previousSearch").click(function() {
+  let cityName = event.target.value;
+  returnCurrentWeather(cityName);
+  returnWeatherForecast(cityName);
+})
 
 
 
