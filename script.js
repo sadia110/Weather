@@ -2,26 +2,7 @@ const apiKey = "4d601727be6245f8779743289a400cc3";
  var currWeatherDiv = $("#currentWeather");
  var forecastDiv = $("#weatherForecast");
 
-//  search fields----
- function writeSearchHistory(array) {
-  $.each(array, function(i) {
-      createHistoryButton(array[i]);
-  })
-}
 
-
-$("#submitCity").click(function() {
-  event.preventDefault();
-  let cityName = $("#cityInput").val();
-  returnCurrentWeather(cityName);
-  returnWeatherForecast(cityName);
-});
-
-$("#previousSearch").click(function() {
-  let cityName = event.target.value;
-  returnCurrentWeather(cityName);
-  returnWeatherForecast(cityName);
-}) 
 
 // Current Weather
 function returnCurrentWeather(cityName) {
@@ -102,7 +83,10 @@ function returnUVIndex(coordinates) {
       }
       currWeatherDiv.append(`<p>UV Index: <span class="text-${textColour} uvPadding" style="background-color: ${uvSeverity};">${currUVIndex}</span></p>`);
   })
-}
+}  
+
+
+//HISTORY BUTTON  
 
 function createHistoryButton(cityName) {
   // TO CHECK IF BUTTON EXIT IN SEACH BOX 
@@ -127,7 +111,9 @@ function writeSearchHistory(array) {
       createHistoryButton(array[i]);
   })
 }
-
+// Get a deafult weather search
+returnCurrentWeather("Barcelona");
+returnWeatherForecast("Barcelona");
 
 
 $("#submitCity").click(function() {
