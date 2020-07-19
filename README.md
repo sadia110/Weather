@@ -1,19 +1,23 @@
 # WeatherApp   
 
 ## Description 
-Weather App that show the current weather of the city followed by a 5 day forecast. Other features added are the UV index, color coded to the servity ( green to low - red extrem) and Wind speed.  
+Weather App that show the current weather of the city followed by a 5 day forecast. Other features added is  the UV index,( color coded for differnet levels of severity( according to Environment Canada guidelines ),   wind speed and humidity levels. 
 
-Link: 
+![image](https://user-images.githubusercontent.com/64391826/87885334-18429f80-c9e3-11ea-9ed6-8b7e18bb0532.png)
+![image](https://user-images.githubusercontent.com/64391826/87885343-242e6180-c9e3-11ea-886d-d6a50fb4ac1d.png)
 
-## Techonolgies  
-Openweather Map API  
+Link: https://sadia110.github.io/Weather/
 
+## Technologies  
+Openweather Map -API 
+Bootstrap 
+CloudFlare 
  
  ## Usage  
- Enter your city in the seach box on the left. 
+ Enter your city in the search box on the left. 
 
- ## Licence 
--No Licence  
+## Licence 
+- No Licences  
  ## Contributors  
 ## Questions 
 
