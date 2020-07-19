@@ -9,9 +9,9 @@ Weather App that show the current weather of the city followed by a 5 day foreca
 Link: https://sadia110.github.io/Weather/
 
 ## Technologies  
-Openweather Map -API 
-Bootstrap 
-CloudFlare 
+- Openweather Map -API 
+- Bootstrap 
+- CloudFlare 
  
  ## Usage  
  Enter your city in the search box on the left. 
